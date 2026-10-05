@@ -1,0 +1,66 @@
+package JogoDaCorda;
+
+import javax.swing.JOptionPane;
+
+public class main {
+    public static void main(String[] args) {
+        
+        int vida = 7; 
+        String boneco;
+       
+        for (int i = 1; i <= 7; i++) {
+            
+       
+            String tentativa = JOptionPane.showInputDialog( "Tente adivinhar a palavra de 6 letras (Você tem 7 chances).\n" + "Tentativa atual: " + i + " | Vidas restantes: " + vida  );
+            
+                    if (tentativa == null) {
+                JOptionPane.showMessageDialog(null, "Jogo encerrado pelo jogador.");
+                break;
+            }
+   
+            
+
+
+        
+            if (tentativa.equalsIgnoreCase("P")) {
+                JOptionPane.showMessageDialog(null, "CERTO! A palavra tem essa letra (P-----)");
+            } 
+            else if (tentativa.equalsIgnoreCase("A")) {
+                JOptionPane.showMessageDialog(null, "SIM! Você acertou, tem essa letra (-A--Ã-)");
+            } 
+            else if (tentativa.equalsIgnoreCase("I")) {
+                JOptionPane.showMessageDialog(null, "BOA! acertou uma letra (--I---)");
+            } 
+            else if (tentativa.equalsIgnoreCase("X")) {
+                JOptionPane.showMessageDialog(null, "EXCELENTE! acertou em cheio (---X--)");
+            } 
+            else if (tentativa.equalsIgnoreCase("O")) {
+                JOptionPane.showMessageDialog(null, "INCRÍVEL! acertou a letra (-----O)");
+            } 
+            else if (tentativa.equalsIgnoreCase("PAIXAO") || tentativa.equalsIgnoreCase("PAIXÃO")) {
+                JOptionPane.showMessageDialog(null, "UMA BESTA ENJAULADA?? VOCÊ ACERTOU A PALAVRA TODA! (PAIXÃO)");
+       
+            } 
+            else {
+               
+                vida = vida - 1; 
+                JOptionPane.showMessageDialog(null, "Você errou, você ainda tem " + vida + ". Tente mais uma vez.");
+                break;
+            }
+                if (vida == 0 || i == 7) {
+                    JOptionPane.showMessageDialog(null, "PUTZ! suas vidas acabaram. GAME OVER!");
+                    break; 
+                }
+                
+                {
+               tentativa= JOptionPane.showInputDialog (null, "VOCÊ QUER JOGAR NOVAMENTE??");
+                }
+                
+                while (tentativa.equalsIgnoreCase("SIM"));{
+                	
+                }
+                
+        }
+        } 
+        
+    }
